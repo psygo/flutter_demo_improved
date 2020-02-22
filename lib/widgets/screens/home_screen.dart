@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../theme/auxiliary_theming.dart';
+import '../counter/counter.dart';
 
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
 
   static const String defaultTitle = 'Flutter Demo Home Page';
+  static const String pushedButtonMsg 
+    = 'You have pushed the button this many times:';
+  static const String pushedButtonTooltip = 'Increment';
 
   final String _title;
 
@@ -19,54 +24,38 @@ class HomeScreen extends StatefulWidget {
   String get title => _title;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-
-  static const String pushedButtonMsg 
-    = 'You have pushed the button this many times:';
-  static const String pushedButtonTooltip = 'Increment';
-
-  int _counter = 0;
-
-  String get _counterAsString => _counter.toString();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.title,
-        ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              pushedButtonMsg,
+    return Consumer<Counter>(
+      builder: (context, counter, child){
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              title,
             ),
-            Text(
-              _counterAsString,
-              style: textStyleLargeText,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  pushedButtonMsg,
+                ),
+                Text(
+                  counter.countAsString,
+                  style: textStyleLargeText,
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: pushedButtonTooltip,
-        child: Icon(
-          Icons.add,
-        ),
-      ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: counter.increment,
+            tooltip: pushedButtonTooltip,
+            child: Icon(
+              Icons.add,
+            ),
+          ),
+        );
+      },
     );
   }
 }

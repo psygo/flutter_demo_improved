@@ -1,4 +1,7 @@
-class Counter {
+import 'package:flutter/foundation.dart';
+
+
+class Counter extends ChangeNotifier{
 
   int _count = 0;
 
@@ -9,5 +12,6 @@ class Counter {
 
   void increment(){
     _count++;
+    notifyListeners();
   }
 }
