@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/auxiliary_theming.dart';
 
-class MyHomePage extends StatefulWidget {
+
+class HomeScreen extends StatefulWidget {
 
   static const String defaultTitle = 'Flutter Demo Home Page';
 
   final String _title;
 
-  MyHomePage({
+  HomeScreen({
     Key key, 
     String title,
   }): 
@@ -17,12 +19,18 @@ class MyHomePage extends StatefulWidget {
   String get title => _title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen> {
+
+  static const String pushedButtonMsg 
+    = 'You have pushed the button this many times:';
+  static const String pushedButtonTooltip = 'Increment';
 
   int _counter = 0;
+
+  String get _counterAsString => _counter.toString();
 
   void _incrementCounter() {
     setState(() {
@@ -34,26 +42,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              pushedButtonMsg,
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              _counterAsString,
+              style: textStyleLargeText,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        tooltip: pushedButtonTooltip,
+        child: Icon(
+          Icons.add,
+        ),
       ),
     );
   }
