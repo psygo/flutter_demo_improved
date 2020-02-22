@@ -14,30 +14,38 @@ void main() {
     });
 
     test('Count getters', (){
-      expect(_counter.count, 0);
-      expect(_counter.countAsString, '0');
+      const int expectedInitialCount = 0;
+      final String expectedInitialAsString = expectedInitialCount.toString();
+
+      expect(_counter.count, expectedInitialCount);
+      expect(_counter.countAsString, expectedInitialAsString);
     });
 
     test('Increment the counter', (){
+      const int expectedCountAfterOneIncrement = 1;
+
       _counter.increment();
 
-      expect(_counter.count, 1);
+      expect(_counter.count, expectedCountAfterOneIncrement);
     });
   });
 
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
+  group('Test the widgets', (){    
+    testWidgets('Initial setup', (WidgetTester tester) async {
+      await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+      expect(find.text('0'), findsOneWidget);
+      expect(find.text('1'), findsNothing);
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    testWidgets('Increment the counter on tap', (WidgetTester tester) async {
+      await tester.pumpWidget(MyApp());
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+      await tester.tap(find.byIcon(Icons.add));
+      await tester.pump();
+
+      expect(find.text('0'), findsNothing);
+      expect(find.text('1'), findsOneWidget);
+    });
+  });  
 }
