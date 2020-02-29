@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../lib/widgets/counter/counter.dart';
-import '../mocks/counter_mocks.dart';
+import '../fixture_data/counter_fixture_data.dart';
 
 void main() {
   group('Basic tests for the counter class', () {

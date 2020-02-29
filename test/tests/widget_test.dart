@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../lib/main.dart';
-import '../mocks/counter_mocks.dart';
+import '../fixture_data/counter_fixture_data.dart';
 
 void main() {
   group('Test the widgets', () {
