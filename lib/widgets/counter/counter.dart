@@ -9,7 +9,7 @@ abstract class CounterInterface {
 }
 
 class Counter with ChangeNotifier implements CounterInterface {
-  int _count = 0;
+  int _count = CounterInterface.defaultInitialCount;
 
   Counter();
 
