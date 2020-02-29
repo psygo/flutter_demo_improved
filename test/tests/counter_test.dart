@@ -5,21 +5,21 @@ import '../fixture_data/counter_fixture_data.dart';
 
 void main() {
   group('Basic tests for the counter class', () {
-    Counter _counter;
+    Counter counter;
 
     setUp(() {
-      _counter = Counter();
+      counter = Counter();
     });
 
     test('Count getters', () {
-      expect(_counter.count, initialCount);
-      expect(_counter.countAsString, initialCountAsString);
+      expect(counter.count, initialCount);
+      expect(counter.countAsString, initialCountAsString);
     });
 
     test('Increment the counter', () {
-      _counter.increment();
+      counter.increment();
 
-      expect(_counter.count, countAfterOneIncrement);
+      expect(counter.count, countAfterOneIncrement);
     });
   });
 }
