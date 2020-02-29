@@ -12,14 +12,14 @@ void main() {
     });
 
     test('Count getters', () {
-      expect(_counter.count, expectedInitialCount);
-      expect(_counter.countAsString, expectedInitialCountAsString);
+      expect(_counter.count, initialCount);
+      expect(_counter.countAsString, initialCountAsString);
     });
 
     test('Increment the counter', () {
       _counter.increment();
 
-      expect(_counter.count, expectedCountAfterOneIncrement);
+      expect(_counter.count, countAfterOneIncrement);
     });
   });
 }

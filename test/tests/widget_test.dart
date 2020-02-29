@@ -6,21 +6,28 @@ import '../fixture_data/counter_fixture_data.dart';
 
 void main() {
   group('Test the widgets', () {
-    testWidgets('Initial setup', (WidgetTester tester) async {
-      await tester.pumpWidget(FlutterDemoApp());
 
-      expect(find.text(expectedInitialCountAsString), findsOneWidget);
-      expect(find.text(unexpectedInitialCountAsString), findsNothing);
+    FlutterDemoApp app;
+
+    setUp((){
+      app = FlutterDemoApp();
+    });
+
+    testWidgets('Initial setup', (WidgetTester tester) async {
+      await tester.pumpWidget(app);
+
+      expect(find.text(initialCountAsString), findsOneWidget);
+      expect(find.text(wrongInitialCountAsString), findsNothing);
     });
 
     testWidgets('Increment the counter on tap', (WidgetTester tester) async {
-      await tester.pumpWidget(FlutterDemoApp());
+      await tester.pumpWidget(app);
 
       await tester.tap(find.byIcon(Icons.add));
       await tester.pump();
 
-      expect(find.text(unexpectedCountAfterOneIncrementAsString), findsNothing);
-      expect(find.text(expectedCountAfterOneIncrementAsString), findsOneWidget);
+      expect(find.text(wrongCountAfterOneIncrementAsString), findsNothing);
+      expect(find.text(countAfterOneIncrementAsString), findsOneWidget);
     });
   });
 }
