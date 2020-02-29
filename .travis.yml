@@ -13,12 +13,12 @@ dart_task:
 #     packages:
 #       - lib32stdc++6
 
-# install:
-#   - git clone https://github.com/flutter/flutter.git -b stable
-# #   - ./flutter/bin/flutter doctor
-
-script:
-  - ./flutter/bin/flutter test
+install:
+  - git clone https://github.com/flutter/flutter.git -b stable
+  # - ./flutter/bin/flutter doctor
 
 # script:
-#   - flutter test
+#   - ./flutter/bin/flutter test
+
+script:
+  - flutter test
