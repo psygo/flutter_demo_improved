@@ -18,6 +18,7 @@ install:
   # - ./flutter/bin/flutter doctor
 
 script:
+  - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter test
 
 # script:
