@@ -23,3 +23,4 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   provider: ^4.0.4
+  pedantic: ^1.8.0
