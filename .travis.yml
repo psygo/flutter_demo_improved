@@ -1,5 +1,5 @@
 env:
-  - FLUTTER_GITHUB_ADDRESS="https://github.com/flutter/flutter.git"
+  - FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
 
 language: dart
 
@@ -10,7 +10,7 @@ dart_task:
   - dartfmt
 
 install:
-  - git clone $FLUTTER_GITHUB_ADDRESS -b stable
+  - git clone $FLUTTER_GITHUB -b stable
 
 script:
   - ./flutter/bin/flutter doctor
