@@ -19,7 +19,7 @@ void main() {
     test('Increment the counter', () {
       counter.increment();
 
-      expect(counter.count, countAfterOneIncrement);
+      expect(counter.count, 10);
     });
   });
 }
