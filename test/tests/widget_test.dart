@@ -4,9 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../lib/main.dart';
 import '../mocks/counter_mocks.dart';
 
-
 void main() {
-  group('Test the widgets', (){    
+  group('Test the widgets', () {
     testWidgets('Initial setup', (WidgetTester tester) async {
       await tester.pumpWidget(FlutterDemoApp());
 
@@ -23,5 +22,5 @@ void main() {
       expect(find.text(unexpectedCountAfterOneIncrementAsString), findsNothing);
       expect(find.text(expectedCountAfterOneIncrementAsString), findsOneWidget);
     });
-  });  
+  });
 }
