@@ -27,7 +27,7 @@ void main() {
       await tester.pump();
 
       expect(find.text(wrongCountAfterOneIncrementAsString), findsNothing);
-      expect(find.text('alksdjf;a'), findsOneWidget);
+      expect(find.text(countAfterOneIncrementAsString), findsOneWidget);
     });
   });
 }
