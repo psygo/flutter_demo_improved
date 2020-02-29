@@ -14,9 +14,7 @@ class FlutterDemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<Counter>(
-          create: (_) => Counter(),
-        ),
+        ChangeNotifierProvider<Counter>(create: (_) => Counter()),
       ],
       child: MaterialApp(
         title: title,
