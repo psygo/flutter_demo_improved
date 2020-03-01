@@ -2,8 +2,8 @@ name: flutter_demo_improved
 
 description: >-
   A better version of the Flutter Demo.
-  It features: better tests, more organized structure, state management with the
-  Provider package.
+  It features: more organized structure; unit, widget and integration tests; 
+  state management with the Provider package; and CI with Travis.
 
 version: 1.0.3
 

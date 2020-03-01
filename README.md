@@ -4,6 +4,8 @@ A more robust version of the Flutter Demo.
 
 It features: 
 
+- Unit, widget and integration tests.
+    - All derived from, but not *ipsis litteris* to [Flutter's Testing Cookbook](https://flutter.dev/docs/testing).
 - Better organization of tests.
 - More organized structure.
     - Theming is now parameterized in a theme folder. All references to themes should go there.
