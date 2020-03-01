@@ -2,6 +2,7 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 import '../test/fixture_data/counter_fixture_data.dart';
+import 'performance_reporter.dart';
 
 void main() {
   group('Increment integration test', () {
@@ -26,10 +27,19 @@ void main() {
     });
 
     test('Increments the counter', () async {
-      await driver.tap(fabFinder);
+      PerformanceReporter performanceReporter = PerformanceReporter(
+          reportTitle: 'tapping',
+          destinationDirectory: 'test_driver/performance_logs');
 
-      expect(await driver.getText(counterTextFinder),
-          countAfterOneIncrementAsString);
+      final Timeline timeline = await driver.traceAction(() async {
+        await driver.tap(fabFinder);
+
+        expect(await driver.getText(counterTextFinder),
+            countAfterOneIncrementAsString);
+      });
+
+      performanceReporter.addTimeline(timeline);
+      await performanceReporter.writeReports();
     });
   });
 }
