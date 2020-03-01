@@ -14,5 +14,5 @@ install:
   - git clone $FLUTTER_GITHUB -b stable
 
 script:
-  - $FLUTTER_PATH/flutter doctor
-  - $FLUTTER_PATH/flutter test
+  - ${FLUTTER_PATH}/flutter doctor
+  - ${FLUTTER_PATH}/flutter test
