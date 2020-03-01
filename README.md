@@ -26,3 +26,4 @@ It features:
     ```bash
     flutter drive --target=test_driver/app.dart
     ```
+    - Use `chrome://tracing` inside Chrome to analyze the performance results.

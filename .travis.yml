@@ -15,3 +15,4 @@ install:
 script:
   - ./flutter/bin/flutter doctor
   - ./flutter/bin/flutter test
+  - ./flutter/bin/flutter drive --target=test_driver/app.dart
