@@ -29,7 +29,7 @@ void main() {
     test('Increments the counter', () async {
       PerformanceReporter performanceReporter = PerformanceReporter(
           reportTitle: 'tapping',
-          destinationDirectory: 'test_driver/performance_logs');
+          destinationDirectory: 'test_driver/performance_logs/tapping');
 
       final Timeline timeline = await driver.traceAction(() async {
         await driver.tap(fabFinder);
