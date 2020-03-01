@@ -1,5 +1,13 @@
 name: flutter_demo_improved
 
+homepage: https://github.com/psygo/flutter_demo_improved
+
+repository: https://github.com/psygo/flutter_demo_improved
+
+documentation: https://github.com/psygo/flutter_demo_improved
+
+issue_tracker: https://github.com/psygo/flutter_demo_improved/issues
+
 description: >-
   A better version of the Flutter Demo.
   It features: more organized structure; unit, widget and integration tests; 
