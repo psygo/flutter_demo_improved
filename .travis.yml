@@ -22,6 +22,18 @@ jobs:
         - ./flutter/bin/flutter doctor
       script: 
         - ./flutter/bin/flutter test
+    - stage: Integration Test on Android
+      os: linux
+      dist: trusty
+      language: android
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      install: git clone $FLUTTER_GITHUB -b stable
+      before_script:
+        - ./flutter/bin/flutter doctor
+      script: ./flutter/bin/flutter drive --target=test_driver/app.dart
       
 
 # script:
