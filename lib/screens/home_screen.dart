@@ -41,12 +41,14 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Text(
                   counter.countAsString,
+                  key: Key('counter_text'),
                   style: textStyleLargeText,
                 ),
               ],
             ),
           ),
           floatingActionButton: FloatingActionButton(
+            key: Key('increment_fab'),
             onPressed: counter.increment,
             tooltip: pushedButtonTooltip,
             child: Icon(
