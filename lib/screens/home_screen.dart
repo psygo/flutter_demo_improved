@@ -15,9 +15,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({
     Key key,
     String title,
-  })  
-  
-  : _title = title ?? defaultTitle,
+  })  : _title = title ?? defaultTitle,
         super(key: key);
 
   String get title => _title;

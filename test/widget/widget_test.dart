@@ -12,15 +12,18 @@ void main() {
       app = FlutterDemoApp();
     });
 
+    Future<void> pumpApp(WidgetTester tester) async =>
+        await tester.pumpWidget(app);
+
     testWidgets('Initial setup', (WidgetTester tester) async {
-      await tester.pumpWidget(app);
+      await pumpApp(tester);
 
       expect(find.text(initialCountAsString), findsOneWidget);
       expect(find.text(wrongInitialCountAsString), findsNothing);
     });
 
     testWidgets('Increment the counter on tap', (WidgetTester tester) async {
-      await tester.pumpWidget(app);
+      await pumpApp(tester);
 
       IconData addIcon = Icons.add;
       await tester.tap(find.byIcon(addIcon));
