@@ -15,12 +15,12 @@ dart_task:
 jobs:
   include:
     - stage: Flutter Test
-    language: generic
-    os: linux
-    install: git clone $FLUTTER_GITHUB -b stable
-    before_script:
-      - ./flutter/bin/flutter doctor
-    script: ./flutter/bin/flutter test
+      language: generic
+      os: linux
+      install: git clone $FLUTTER_GITHUB -b stable
+      before_script:
+        - ./flutter/bin/flutter doctor
+      script: ./flutter/bin/flutter test
 
 # script:
 #   - ./flutter/bin/flutter doctor
