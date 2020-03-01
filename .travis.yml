@@ -1,6 +1,5 @@
 env:
   - FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
-  - FLUTTER_PATH="./flutter/bin"
 
 language: dart
 
@@ -14,5 +13,5 @@ install:
   - git clone $FLUTTER_GITHUB -b stable
 
 script:
-  - ${FLUTTER_PATH}/flutter doctor
-  - ${FLUTTER_PATH}/flutter test
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter test
