@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 import '../test/fixture_data/counter_fixture_data.dart';
 
 void main() {
-  group('Counter App', () {
+  group('Increment integration test', () {
     final SerializableFinder counterTextFinder =
         find.byValueKey('counter_text');
     final SerializableFinder fabFinder = find.byValueKey('increment_fab');
@@ -15,12 +15,10 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-    bool driverIsNull() => driver != null;
+    bool driverIsNotNull() => driver != null;
 
     tearDownAll(() async {
-      if (driverIsNull()) {
-        await driver.close();
-      }
+      if (driverIsNotNull()) await driver.close();
     });
 
     test('Starts at 0', () async {
