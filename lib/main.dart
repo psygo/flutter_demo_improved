@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'theme/theme.dart';
 import 'widgets/counter/counter.dart';
-import 'widgets/screens/home_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(FlutterDemoApp());
 

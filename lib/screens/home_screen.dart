@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../theme/auxiliary_theming.dart';
-import '../counter/counter.dart';
+import '../theme/auxiliary_theming.dart';
+import '../widgets/counter/counter.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String defaultTitle = 'Flutter Demo Home Page';
