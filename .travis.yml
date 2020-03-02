@@ -2,11 +2,9 @@ env: FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
 
 language: dart
 
-dart:
-  - stable
+dart: stable
 
-dart_task:
-  - dartfmt
+dart_task: dartfmt
 
 jobs:
   include:
