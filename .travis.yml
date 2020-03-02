@@ -1,5 +1,4 @@
-env:
-  - FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
+env: FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
 
 language: dart
 
@@ -11,17 +10,9 @@ dart_task:
 
 jobs:
   include:
-    - stage: Code Formatting
-      language: dart
-      dart:
-        - stable
-      dart_task: 
-        - dartfmt
     - stage: Flutter Test
       language: dart
       os: linux
       install: git clone $FLUTTER_GITHUB -b stable
-      before_script:
-        - ./flutter/bin/flutter doctor
-      script: 
-        - ./flutter/bin/flutter test
+      before_script: ./flutter/bin/flutter doctor
+      script: ./flutter/bin/flutter test
