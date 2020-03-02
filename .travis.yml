@@ -1,13 +1,12 @@
-env:
-  - FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
+env: FLUTTER_GITHUB="https://github.com/flutter/flutter.git"
 
 jobs:
   include:
     - stage: Code Formatting
       language: dart
+      os: linux
       dart: stable
       dart_task: dartfmt
-      
     - stage: Flutter Test
       language: dart
       os: linux
