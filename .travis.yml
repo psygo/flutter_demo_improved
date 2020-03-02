@@ -6,13 +6,15 @@ language: dart
 dart:
   - stable
 
-# dart_task:
-#   - dartfmt
+dart_task:
+  - dartfmt
 
 jobs:
   include:
     - stage: Code Formatting
       language: dart
+      dart:
+        - stable
       dart_task: 
         - dartfmt
     - stage: Flutter Test
